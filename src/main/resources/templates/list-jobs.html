@@ -1,6 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
+<html xmlns:th="http://www.thymeleaf.org/" lang="">
 <head th:replace="~{fragments :: head}">
+  <style>
+    table.job-listing {
+        margin: 30px auto;
+        border: 1px solid #e4e4e4;
+        width: 80%;
+    }
+
+    td {
+        border-bottom: 1px solid #e4e4e4;
+        padding: 8px;
+    }
+  </style>
+  <title></title>
 </head>
 <body>
 
@@ -10,7 +23,37 @@
 
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-  <!-- TODO #1 - Use a loop to display job results in a table. -->
+  <div th:each="job : ${jobs}">
+    <table class="job-listing">
+      <tbody>
+      <tr>
+        <td><strong>ID:</strong></td>
+        <td th:text="${job.id}"></td>
+      </tr>
+      <tr>
+        <td><strong>Job Title:</strong></td>
+        <td th:text="${job.name}"></td>
+      </tr>
+      <tr>
+        <td><strong>Employer:</strong></td>
+        <td th:text="${job.employer}"></td>
+      </tr>
+      <tr>
+        <td><strong>Location:</strong></td>
+        <td th:text="${job.location}"></td>
+      </tr>
+      <tr>
+        <td><strong>Position Type:</strong></td>
+        <td th:text="${job.positionType}"></td>
+      </tr>
+      <tr>
+        <td><strong>Skill:</strong></td>
+        <td th:text="${job.coreCompetency}"></td>
+      </tr>
+      </tbody>
+    </table>
+    <br/>
+  </div>
 
 </div>
 

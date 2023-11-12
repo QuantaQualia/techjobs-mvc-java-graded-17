@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
+<html xmlns:th="http://www.thymeleaf.org/" lang="">
 
 <head th:fragment="head">
 
@@ -26,6 +26,13 @@
         </div>
     </div>
 </div>
-
+<th:block th:fragment="job-details" th:with="job=${job}">
+    <tr>
+        <td th:text="${job.id}"></td>
+        <td th:text="${job.name}"></td>
+        <td th:text="${job.employer}"></td>
+        <td th:text="${job.location}"></td>
+    </tr>
+</th:block>
 </body>
 </html>
