@@ -40,8 +40,7 @@
 
   <!-- TODO #4 - Loop over the search results to display all job fields. -->
 
-    <div th:each="job : ${jobs}">
-        <table class="job-listing">
+        <table class="job-listing" th:each="job : ${jobs}">
 
             <tbody>
             <tr>
@@ -72,7 +71,6 @@
             </tbody>
         </table>
         <br/>
-    </div>
 
 </div>
 

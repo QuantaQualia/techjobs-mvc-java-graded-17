@@ -230,6 +230,9 @@ public class JobData {
         return allCoreCompetency;
     }
 
+    public JobData() {
+    }
+
 }
 
 
